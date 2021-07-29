@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="../Boostrap_cdn/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="../Boostrap_cdn/bootstrap.min.css">
+    <link rel="stylesheet" href="../Boostrap_cdn/iziToast.min.css">
+    <title>Document</title>
+    
+</head>
+
+<body>
+    <table id="datatable">
+        <thead>
+            
+        </thead>
+        <tbody>
+            
+        </tbody>
+    </table>
+    <input type="text" id="index" placeholder="Enter your name .">
+    <button onclick="btn()" id="btn">submit</button>
+</body>
+<script src="../Boostrap_cdn/jquery.min.js"></script>
+    <script src="../Boostrap_cdn/bootstrap.min.js"></script>
+    <script src="../Boostrap_cdn/iziToast.min.js"></script>
+    <script src="../Boostrap_cdn/jquery.dataTables.min.js"></script>
+    <script src="../Boostrap_cdn/popper.min.js"></script>
+    <script src="jsjson.js"></script>
+<script>
+    
+    $(document).ready(function () {
+        var Data = getJson();
+        console.log(Data[1].password)
+        $('#datatable').DataTable({
+            "data":Data,
+            columns: [
+                {
+                    title:"Name",
+                    data:"Name"
+                },
+                {
+                    title:"Age",
+                    data:"age"
+                },
+                {
+                    title:"Email",
+                    data:"Email"
+                },
+                {
+                    title:"Password",
+                    data:"password"
+                }
+            ]
+        });
+    });
+</script>
+
+</html>
